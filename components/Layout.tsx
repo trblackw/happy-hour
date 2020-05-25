@@ -3,9 +3,9 @@ import Nav from './Nav';
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
-        <div>
+        <div className="speckled-gradient">
             <Nav />
-            <main className="m-5 p-5 max-w-screen-xl mx-auto min-h-screen">{children}</main>
+            <main className="mx-5 px-5 max-w-screen-xl mx-auto min-h-screen">{children}</main>
         </div>
     );
 }
