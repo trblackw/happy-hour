@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Nav() {
     return (
-        <nav className="h-32 p-5 max-w-3xl">
+        <nav className="h-32 p-5 w-auto ml-24">
             <div className="flex flex-col justify-center">
                 <span className="block mt-5 font-bold text-3xl" style={{ color: '#1b1b2f' }}>
                     Happy Hour
@@ -14,8 +14,8 @@ export default function Nav() {
                 className="absolute inset-0 w-full top-0 right-0 left-0 z-0"
                 style={{
                     transformOrigin: 'right top 0px',
-                    transform: 'skewY(6deg)',
-                    height: '12%',
+                    transform: 'skewY(9deg)',
+                    height: '18%',
                     background: '#162447 none repeat scroll 0% 0%',
                 }}
             />

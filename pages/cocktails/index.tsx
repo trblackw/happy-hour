@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, useEffect, useRef} from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useRef } from 'react';
 import { NextPage } from 'next';
 import { Drink } from '../../types';
 import { useImmer } from 'use-immer';
@@ -47,8 +47,8 @@ const Cocktails: NextPage<Props> = ({ drinks }) => {
 
     const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
         e.persist();
-        updateState(draft => void (draft.queryInputValue = e.target.value))
-    }
+        updateState(draft => void (draft.queryInputValue = e.target.value));
+    };
 
     return (
         <div className="w-full">
@@ -69,21 +69,23 @@ const Cocktails: NextPage<Props> = ({ drinks }) => {
                         Search
                     </button>
                 </form>
-                <span className="block text-gray-600 block">Search alphabetically</span>
             </div>
-            <div className="flex flex-row justify-end items-center">
-                {alphabet.map((letter, index) => (
-                    <span
-                        key={letter}
-                        className="text-sm mx-1 cursor-pointer hover:underline"
-                        style={{ color: '#1f4068' }}
-                        onClick={() => {
-                            updateState(draft => void (draft.selectedLetter = alphabet[index]));
-                        }}
-                    >
-                        {letter.toLocaleUpperCase()}
-                    </span>
-                ))}
+            <div className="flex flex-col justify-start items-end pr-16">
+                <span className="block text-gray-600 block">Search alphabetically</span>
+                <div className="flex flex-row justify-end items-center">
+                    {alphabet.map((letter, index) => (
+                        <span
+                            key={letter}
+                            className="text-sm mx-1 cursor-pointer hover:underline"
+                            style={{ color: '#1f4068' }}
+                            onClick={() => {
+                                updateState(draft => void (draft.selectedLetter = alphabet[index]));
+                            }}
+                        >
+                            {letter.toLocaleUpperCase()}
+                        </span>
+                    ))}
+                </div>
             </div>
             <div className="auto-grid mt-2">
                 {state.drinks.map(({ idDrink, strDrink, strDrinkThumb }) => (
